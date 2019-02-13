@@ -2,7 +2,7 @@ package com.Lab1;
 
 public class Helicopter {
 
-    static int numberBuilt = 0;
+    private static int numberBuilt = 0;
 
     protected int price;
     protected int yearBuilt;
@@ -12,6 +12,29 @@ public class Helicopter {
     private int maxHeight;
     private int passengerCapacity;
     private int maxSpeedLimit;
+
+
+    public Helicopter() {
+
+        this(10, "Toy", 100, 1, 10, 1, 2019);
+    }
+
+    public Helicopter(int maxLiftWeight, String name, int maxHeight, int passengerCapacity) {
+
+        this(maxLiftWeight, name, maxHeight, passengerCapacity, 800, 15, 2000);
+    }
+
+    public Helicopter(int maxLiftWeight, String name, int maxHeight, int passengerCapacity, int maxSpeedLimit, int price, int yearBuilt) {
+
+        this.maxLiftWeight = maxLiftWeight;
+        this.name = name;
+        this.maxHeight = maxHeight;
+        this.passengerCapacity = passengerCapacity;
+        this.maxSpeedLimit = maxSpeedLimit;
+        this.price = price;
+        this.yearBuilt = yearBuilt;
+        numberBuilt++;
+    }
 
 
     public void setMaxLiftWeight(int maxLiftWeight) {
@@ -70,37 +93,6 @@ public class Helicopter {
         return yearBuilt;
     }
 
-//--------------------------------------------
-
-    public Helicopter() {
-        this(10, "Toy", 100, 1, 10, 1, 2019);
-    }
-
-    public Helicopter(int maxLiftWeight,
-                      String name,
-                      int maxHeight,
-                      int passengerCapacity) {
-
-        this(maxLiftWeight, name, maxHeight, passengerCapacity, 800, 15, 2000);
-    }
-
-    public Helicopter(int maxLiftWeight,
-                      String name,
-                      int maxHeight,
-                      int passengerCapacity,
-                      int maxSpeedLimit,
-                      int price,
-                      int yearBuilt) {
-
-        this.maxLiftWeight = maxLiftWeight;
-        this.name = name;
-        this.maxHeight = maxHeight;
-        this.passengerCapacity = passengerCapacity;
-        this.maxSpeedLimit = maxSpeedLimit;
-        this.price = price;
-        this.yearBuilt = yearBuilt;
-        numberBuilt++;
-    }
 
     public String toString() {
         return "\n\tHelicopter\n"
@@ -121,13 +113,7 @@ public class Helicopter {
         System.out.println(numberBuilt + " helicopter built.");
     }
 
-    public void resetValues(int maxLiftWeight,
-                            String name,
-                            int maxHeight,
-                            int passengerCapacity,
-                            int maxSpeedLimit,
-                            int price,
-                            int yearBuilt) {
+    public void resetValues(int maxLiftWeight, String name, int maxHeight, int passengerCapacity, int maxSpeedLimit, int price, int yearBuilt) {
 
         this.maxLiftWeight = maxLiftWeight;
         this.name = name;

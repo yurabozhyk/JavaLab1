@@ -13,5 +13,8 @@ public class Main {
 
         civil.printNumberBuilt();
         Helicopter.printStaticNumberBuilt();
+
+        military.resetValues(0, null, 0, 0, 0, 0, 0);
+        System.out.println(military.toString());
     }
 }
